@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking System</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(Images/Train\ Bg.jpg);
+            background-size: cover; 
+            background-position: fix; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(249, 249, 249, 0.6);
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px auto;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button.logout {
+            background-color: red;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .search {
+            margin-bottom: 20px;
+        }
+
+        .search div {
+            margin-bottom: 10px; 
+            display: flex; 
+            align-items: center; 
+        }
+
+        .search div label {
+            margin-right: 10px; 
+            width: 120px; 
+        }
+
+        .search input[type="text"],
+        .search input[type="date"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e2e2e2;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 20px; 
+            right: 20px; 
+        }
+
+        .image-container img {
+            width: 100px; 
+            height: auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="Images/3458951.png" alt="Image Description">
+        </div>
+        <h2>Train Ticket Booking System</h2>
+        <button id="getTrainsBtn">Get All Trains</button>
+        <div class="search">
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+            <div>
+                <label for="start">Start Station:</label>
+                <input type="text" id="start">
+            </div>
+            <div>
+                <label for="end">End Station:</label>
+                <input type="text" id="end">
+            </div>
+            <button id="searchBtn">Search</button> 
+        </div>
+        <table id="trainTable">
+            <thead>
+                <tr>
+                    <th>Train ID</th>
+                    <th>Name</th>
+                    <th>Start Station</th>
+                    <th>Destination Station</th>
+                    <th>Capacity</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="trainData">
+              
+            </tbody>
+        </table>
+      
+        <button class="logout" onclick="window.location.href='login.html'">Logout</button>
+    </div>
+
+    <script src="booking.js"></script>
+</body>
+</html>
